@@ -17,11 +17,12 @@ class SearchBar extends Component {
   //this.setstate rerenders the component, and the value is informing the input on what to display
   render() {
     return (
-      <div>
+      <div className="search-bar">
+        <p>Search Youtube:</p>
         <input
           value={this.state.term}
           onChange={event => this.setState({ term: event.target.value })}
-        />c
+        />
       </div>
     );
   }

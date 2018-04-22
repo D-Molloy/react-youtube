@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import YTSearch from "youtube-api-search";
 
-import SearchBar from "./components/search_bar.js";
+import SearchBar from "./components/search_bar";
+import VideoList from "./components/video_list";
+import VideoDetail from './components/video_detail';
 
 const API_KEY = "AIzaSyAQYiNuD6trK-giyef9h6J44-uUymn-6T0";
 
@@ -14,26 +16,31 @@ class App extends Component {
 
     this.state = {
       videos: [],
+      selectedVideo: null
     }
 
     YTSearch({key: API_KEY, term: "phish"}, (videos) =>{
       //destructuring (ES6) the response and saving it to videos
-      this.setState({videos})
+      this.setState({
+        videos : videos,
+        selectedVideo: videos[0]
+      })
       //same as: ---key and value must have the same name
       // this.setState({videos: videos})
+    });
 
-    })
-        
-    YTSearch({key: API_KEY, term: "phish"}, (data) =>{
-      this.setState({videos: data})
-    })
 
+      
   }
 
   render() {
     return (
       <div>
         <SearchBar />
+        <VideoDetail video={this.state.selectedVideo}  />
+        <VideoList 
+        onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+        videos={this.state.videos}/>
       </div>
     );
   }
