@@ -19,24 +19,27 @@ class App extends Component {
       selectedVideo: null
     }
 
-    YTSearch({key: API_KEY, term: "phish"}, (videos) =>{
+    this.videoSearch('the wedge')
+ 
+  }
+
+  videoSearch(term){
+    YTSearch({key: API_KEY, term: term}, (videos) =>{
       //destructuring (ES6) the response and saving it to videos
       this.setState({
         videos : videos,
-        selectedVideo: videos[0]
+        selectedVideo: videos[0],
       })
       //same as: ---key and value must have the same name
       // this.setState({videos: videos})
-    });
-
-
-      
+    });     
   }
 
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar
+         onSearchTermChange={term => this.videoSearch(term)}/>
         <VideoDetail video={this.state.selectedVideo}  />
         <VideoList 
         onVideoSelect={selectedVideo => this.setState({selectedVideo})}
