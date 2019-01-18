@@ -1,5 +1,5 @@
 # AmbientTube
-HTML / CSS / Bootstrap 4 / JavaScript / React / NPM / YouTube Search API / Lodash / Responsive Design
+ React / CSS / Bootstrap 4 / JavaScript / NPM / YouTube Search API / Lodash / Responsive Design
 
 ![AmbientTube](ambienttube-small.png)
 
