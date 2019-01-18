@@ -1,7 +1,7 @@
 # AmbientTube
 HTML / CSS / Bootstrap 4 / JavaScript / React / NPM / YouTube Search API / Lodash / Responsive Design
 
-![AmbientTUbe](ambienttube-small.png)
+![AmbientTube](ambienttube-small.png)
 
 This React app offers an easy way to find peaceful, non-intrusive ambient music.  
 The app has two Class components (index and SearchBar), which handle getting data 
